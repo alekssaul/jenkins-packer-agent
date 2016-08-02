@@ -23,7 +23,7 @@ MAINTAINER Evan Brown <evanbrown@google.com>
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install supervisord and Java
-RUN apt-get install -y supervisor default-jre
+RUN apt-get install -y supervisor default-jre unzip curl git rsync --fix-missing
 VOLUME /var/log/supervisor
 
 # Install Packer
