@@ -15,6 +15,12 @@ if [ -a /root/dockercfg ]; then
   cp /root/dockercfg $HOME/.dockercfg
 fi
 
+if [ -a /root/.dockerconfigjson ]; then
+  mkdir -p /root/.docker
+  mkdir -p $HOME/.docker
+  cp /root/.dockerconfigjson $HOME/.docker/config.json
+  cp /root/.dockerconfigjson /root/.docker/config.json
+fi
 
 # If there are no arguments or if args start with '-', run supervisor
 # and export args making them available to Swarm client.
